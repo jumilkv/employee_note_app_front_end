@@ -18,6 +18,7 @@ export default makeStyles(theme => ({
         fontSize: '20px',
         boxShadow: '2px 3px 4px 1px #adadad',
         borderRadius: '10px',
+        marginBottom: '2rem',
         color: 'gray',
         '&:hover': {
             cursor: 'pointer',
@@ -39,6 +40,7 @@ export default makeStyles(theme => ({
         boxShadow: '2px 3px 4px 1px #adadad',
         borderRadius: '10px',
         color: 'gray',
+        marginBottom: '2rem',
         '&:hover': {
             cursor: 'pointer',
             fontWeight: 'bold',
@@ -59,6 +61,7 @@ export default makeStyles(theme => ({
         boxShadow: '2px 3px 4px 1px #adadad',
         borderRadius: '10px',
         color: 'gray',
+        marginBottom: '2rem',
         '&:hover': {
             cursor: 'pointer',
             fontWeight: 'bold',
@@ -79,6 +82,7 @@ export default makeStyles(theme => ({
         boxShadow: '2px 3px 4px 1px #adadad',
         borderRadius: '10px',
         color: 'gray',
+        marginBottom: '2rem',
         '&:hover': {
             cursor: 'pointer',
             fontWeight: 'bold',
