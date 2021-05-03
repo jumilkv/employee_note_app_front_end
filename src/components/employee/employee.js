@@ -167,15 +167,15 @@ export default function Employees(props) {
                                     </TableHead>
                                     <TableBody>
                                         {
-                                            rows.map(ro => {
+                                            rows.map(employee => {
                                                 return (
                                                     <TableRow hover tabIndex={-1} className={classes.rowData} >
                                                         {columns.map(column => {
-                                                            const value = ro[column.id];
+                                                            const value = employee[column.id];
                                                             return (
                                                                 column.id === 'status' ?
                                                                     <TableCell className={classes.rowData}>
-                                                                        <SwitchActive id={ro.id} fetchData={fetchData} type={url[url.length - 1]} name={ro.name} active={value} />
+                                                                        <SwitchActive id={employee.id} fetchData={fetchData} type={url[url.length - 1]} name={employee.name} active={value} />
                                                                     </TableCell>
                                                                     : column.id === 'created_on' ?
                                                                         <TableCell className={classes.rowData}>
@@ -187,8 +187,8 @@ export default function Employees(props) {
                                                             );
                                                         })}
                                                         <TableCell className={classes.tableRowData}>
-                                                            <Tooltip title={`Edit departments (` + ro.dept_name + `)`} placement="right">
-                                                                <EditIcon className={classes.editIcon} onClick={addOrUpdate('edit', ro)} />
+                                                            <Tooltip title={`Edit employee (` + employee.name + `)`} placement="right">
+                                                                <EditIcon className={classes.editIcon} onClick={addOrUpdate('edit', employee)} />
                                                             </Tooltip>
                                                         </TableCell>
                                                     </TableRow>

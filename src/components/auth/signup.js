@@ -93,20 +93,23 @@ export default function SignUp() {
                 password: Crypto.encrypt(state.password)
             })
             DataFetch(`${process.env.REACT_APP_BACK_END_API}/auth/register`, "POST", body).then(result => {
+                console.log(result)
                 setIsLoading(false)
-                setSnack({
-                    variant: "success",
-                    message: "Successfully registered"
-                })
-                setTimeout(() => {
-                    history.push('/');
-                }, 2000)
-            }).catch(err => {
-                if (err.message === 409) {
+                if (result.status === true) {
+                    setSnack({
+                        variant: "success",
+                        message: "Successfully registered"
+                    })
+                    setTimeout(() => {
+                        history.push('/');
+                    }, 2000)
+                } else if (result.status === false) {
                     setError('Email already exists');
                 } else {
                     setError('Something went wrong. Please try again later');
                 }
+            }).catch(err => {
+                setError('Something went wrong. Please try again later');
                 setIsLoading(false)
             })
 
